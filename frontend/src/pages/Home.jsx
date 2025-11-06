@@ -217,16 +217,29 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Pronto para Melhorar Seu Desempenho Mental?
+      <section className="py-32 bg-gradient-to-br from-green-600 to-green-800 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1"
+            alt="Beach volleyball"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-green-700/90" />
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
+            PRONTO PARA
+            <br />
+            <span className="text-black">DOMINAR SUA MENTE?</span>
           </h2>
-          <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
-            Agende sua primeira sessão e descubra como a psicologia do esporte pode transformar sua performance
+          <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto">
+            Agende sua primeira sessão e transforme sua performance através da psicologia do esporte
           </p>
           <Link to="/contato">
-            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8">
+            <Button size="lg" className="bg-black hover:bg-gray-900 text-white text-xl px-12 py-8 rounded-2xl font-bold shadow-2xl hover:shadow-black/50 transition-all">
+              <Zap className="w-6 h-6 mr-3" />
               Agendar Consulta Agora
             </Button>
           </Link>
