@@ -63,24 +63,27 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-green-500 to-transparent" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">15+</div>
-              <div className="text-blue-100">Anos de Experiência</div>
+            <div className="group">
+              <div className="text-5xl font-black mb-3 text-green-500 group-hover:scale-110 transition-transform">15+</div>
+              <div className="text-gray-400 font-medium">Anos de Experiência</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">75+</div>
-              <div className="text-blue-100">Publicações Científicas</div>
+            <div className="group">
+              <div className="text-5xl font-black mb-3 text-green-500 group-hover:scale-110 transition-transform">75+</div>
+              <div className="text-gray-400 font-medium">Publicações Científicas</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">500+</div>
-              <div className="text-blue-100">Atletas Atendidos</div>
+            <div className="group">
+              <div className="text-5xl font-black mb-3 text-green-500 group-hover:scale-110 transition-transform">500+</div>
+              <div className="text-gray-400 font-medium">Atletas Atendidos</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">3</div>
-              <div className="text-blue-100">Países de Atuação</div>
+            <div className="group">
+              <div className="text-5xl font-black mb-3 text-green-500 group-hover:scale-110 transition-transform">3</div>
+              <div className="text-gray-400 font-medium">Países de Atuação</div>
             </div>
           </div>
         </div>
