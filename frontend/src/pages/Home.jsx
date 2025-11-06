@@ -4,7 +4,7 @@ import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import CourseCard from '../components/CourseCard';
 import { courses, testimonials } from '../mock';
-import { Award, Users, Brain, Target, Star, ArrowRight } from 'lucide-react';
+import { Award, Users, Brain, Target, Star, ArrowRight, Zap, Trophy, TrendingUp } from 'lucide-react';
 
 const Home = () => {
   return (
