@@ -90,55 +90,56 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-black relative">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Como Posso Ajudar Você?
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+              MAXIMIZE SEU
+              <span className="text-green-500"> POTENCIAL</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Trabalho especializado para atletas, clubes e pais de atletas
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center p-6 hover:shadow-xl transition-shadow">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Brain className="w-8 h-8 text-blue-600" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8 hover:border-green-500/50 transition-all group hover:shadow-2xl hover:shadow-green-900/20">
+              <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
+                <Brain className="w-8 h-8 text-green-500" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Controle de Ansiedade</h3>
-              <p className="text-gray-600">
-                Técnicas para gerenciar nervosismo antes e durante competições
+              <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">Controle Mental</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Domine a ansiedade e mantenha o controle emocional em momentos de alta pressão
               </p>
             </Card>
 
-            <Card className="text-center p-6 hover:shadow-xl transition-shadow">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-blue-600" />
+            <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8 hover:border-green-500/50 transition-all group hover:shadow-2xl hover:shadow-green-900/20">
+              <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
+                <Target className="w-8 h-8 text-green-500" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Foco e Concentração</h3>
-              <p className="text-gray-600">
-                Aumente sua concentração e elimine distrações durante toda a competição
+              <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">Foco Total</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Concentração máxima eliminando todas as distrações durante a competição
               </p>
             </Card>
 
-            <Card className="text-center p-6 hover:shadow-xl transition-shadow">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-blue-600" />
+            <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8 hover:border-green-500/50 transition-all group hover:shadow-2xl hover:shadow-green-900/20">
+              <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
+                <Trophy className="w-8 h-8 text-green-500" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Melhora de Desempenho</h3>
-              <p className="text-gray-600">
-                Otimize processos psicológicos que levam ao aumento do desempenho
+              <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">Alta Performance</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Otimize processos mentais que levam ao máximo desempenho atlético
               </p>
             </Card>
 
-            <Card className="text-center p-6 hover:shadow-xl transition-shadow">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-blue-600" />
+            <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8 hover:border-green-500/50 transition-all group hover:shadow-2xl hover:shadow-green-900/20">
+              <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
+                <TrendingUp className="w-8 h-8 text-green-500" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Desenvolvimento Integral</h3>
-              <p className="text-gray-600">
-                Bem-estar, saúde mental e qualidade de vida para atletas
+              <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">Crescimento</h3>
+              <p className="text-gray-400 leading-relaxed">
+                Desenvolvimento integral com bem-estar, saúde mental e qualidade de vida
               </p>
             </Card>
           </div>
