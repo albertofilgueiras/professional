@@ -8,39 +8,56 @@ import { Award, Users, Brain, Target, Star, ArrowRight, Zap, Trophy, TrendingUp 
 
 const Home = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-black">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-white py-20 md:py-32">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Treino Mental para
-                <span className="text-blue-600"> Atletas de Alto Rendimento</span>
-              </h1>
-              <p className="text-lg md:text-xl text-gray-700 mb-8">
-                Psicologia do esporte baseada em evidências científicas para maximizar seu desempenho e bem-estar.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contato">
-                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-lg px-8">
-                    Agendar Consulta
-                  </Button>
-                </Link>
-                <Link to="/cursos">
-                  <Button size="lg" variant="outline" className="text-lg px-8 border-2 border-blue-600 text-blue-600 hover:bg-blue-50">
-                    Conhecer Cursos
-                  </Button>
-                </Link>
-              </div>
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1490108474814-221f6198acc5"
+            alt="Soccer goalkeeper"
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl">
+            <div className="inline-block mb-6 px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-full">
+              <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Psicologia Esportiva</span>
             </div>
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1761258772726-3cf8446157fb"
-                alt="Athletes mental training"
-                className="rounded-2xl shadow-2xl"
-              />
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-tight animate-slide-in">
+              TREINO MENTAL
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
+                ALTO RENDIMENTO
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl">
+              Performance máxima através da ciência. Psicologia do esporte baseada em evidências para atletas de elite.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Link to="/contato">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white text-lg px-10 py-7 rounded-xl font-bold shadow-lg shadow-green-900/50 hover:shadow-green-900/70 transition-all sport-glow">
+                  <Zap className="w-6 h-6 mr-2" />
+                  Agendar Consulta
+                </Button>
+              </Link>
+              <Link to="/cursos">
+                <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-xl border-2 border-green-500 text-green-400 hover:bg-green-500/10 font-bold">
+                  Conhecer Cursos
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
             </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-green-500 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-green-500 rounded-full mt-2" />
           </div>
         </div>
       </section>
