@@ -10,7 +10,7 @@ export const courses = [
     modules: 8,
     duration: "2 horas cada módulo",
     totalHours: 16,
-    image: "https://images.unsplash.com/photo-1664730806272-541d22c83454?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHw0fHxwYXJlbnQlMjBzdXBwb3J0aW5nJTIwYXRobGV0ZXxlbnwwfHx8fDE3NjI0MTA0NzZ8MA&ixlib=rb-4.1.0&q=85",
+    image: "https://images.unsplash.com/photo-1629977007371-0ba395424741",
     benefits: [
       "Aprenda a apoiar sem pressionar",
       "Desenvolva comunicação efetiva com seu filho atleta",
@@ -41,7 +41,7 @@ export const courses = [
     modules: 4,
     duration: "2 horas cada módulo",
     totalHours: 8,
-    image: "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxtaW5kZnVsbmVzcyUyMG1lZGl0YXRpb24lMjBzcG9ydHN8ZW58MHx8fHwxNzYyNDEwNDgyfDA&ixlib=rb-4.1.0&q=85",
+    image: "https://images.unsplash.com/photo-1589492342521-1cc18248fffc",
     benefits: [
       "Técnicas de mindfulness baseadas em evidências",
       "Melhora do foco e concentração",
@@ -119,4 +119,10 @@ export const services = [
       "Certificado de participação"
     ]
   }
+];
+
+export const heroImages = [
+  "https://images.unsplash.com/photo-1490108474814-221f6198acc5",
+  "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1",
+  "https://images.unsplash.com/photo-1589492342521-1cc18248fffc"
 ];
