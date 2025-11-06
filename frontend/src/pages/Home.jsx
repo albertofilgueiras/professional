@@ -185,29 +185,30 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-black relative">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              O Que Dizem Sobre o Trabalho
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+              RESULTADOS
+              <span className="text-green-500"> COMPROVADOS</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Depoimentos de atletas, pais e treinadores
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="p-6">
-                <div className="flex mb-4">
+              <Card key={testimonial.id} className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8 hover:border-green-500/50 transition-all hover:shadow-2xl hover:shadow-green-900/20">
+                <div className="flex mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-5 h-5 fill-green-500 text-green-500" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}</div>
+                <p className="text-gray-300 mb-6 italic text-lg leading-relaxed">"{testimonial.text}"</p>
+                <div className="border-t border-green-900/30 pt-4">
+                  <div className="font-bold text-white text-lg">{testimonial.name}</div>
+                  <div className="text-sm text-green-400">{testimonial.role}</div>
                 </div>
               </Card>
             ))}
