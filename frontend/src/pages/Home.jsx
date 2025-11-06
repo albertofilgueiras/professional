@@ -147,26 +147,35 @@ const Home = () => {
       </section>
 
       {/* Courses Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Cursos Online
+      <section className="py-24 bg-gradient-to-b from-gray-900 to-black relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle, #22c55e 1px, transparent 1px)', backgroundSize: '50px 50px'}} />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-20">
+            <div className="inline-block mb-6 px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-full">
+              <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Educação</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+              CURSOS
+              <span className="text-green-500"> ONLINE</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               Aprenda com um especialista reconhecido internacionalmente
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {courses.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link to="/cursos">
-              <Button size="lg" variant="outline" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50">
+              <Button size="lg" variant="outline" className="border-2 border-green-500 text-green-400 hover:bg-green-500/10 text-lg px-10 py-6 rounded-xl">
                 Ver Todos os Cursos
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
