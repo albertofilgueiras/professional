@@ -9,7 +9,7 @@ const whatsappLink = "https://wa.me/610415661366?text=" + encodeURIComponent("Ol
 const carouselImages = [
   { src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/b1ny74e0_Filgueiras_Flamengo.png", alt: "Alberto Filgueiras no Clube de Regatas do Flamengo" },
   { src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/7lm63nux_image.png", alt: "Alberto Filgueiras com a Seleção Brasileira de Voleibol de Praia" },
-  { src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/hph9r6id_Dunbar.jpg", alt: "Alberto Filgueiras no Dunbar Rovers FC" },
+  { src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/42c0bl9a_image.png", alt: "Alberto Filgueiras no Dunbar Rovers FC" },
   { src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/rgiuzvqm_image.png", alt: "Alberto Filgueiras palestrando para o Cairns Taipans" }
 ];
 
@@ -42,6 +42,7 @@ const institutionsList = [
   { name: 'Central Queensland University (Australia)', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgBraUGiNLpKnf5iKa7cwO6PkzrSe9uZbhew&s' },
   { name: 'University of Gloucestershire (United Kingdom)', logo: 'https://penpostgrad.com/wp-content/uploads/2024/12/UOG-LOGO-WITH-CREST-01.png' },
   { name: 'UERJ', logo: 'https://upload.wikimedia.org/wikipedia/en/4/4f/Rio_de_Janeiro_State_University_logo.png' },
+  { name: 'CBF Academy', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdCTHasvByU1LE32rxCe92LVnQinNhro70sw&s' },
   { name: 'Universidade Santa Ursula', logo: 'https://www.developmentaid.org/files/organizationLogos/universidade-santa-ursula-246313.jpg' },
   { name: 'UNISUAM', logo: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0022/9306/brand.gif?itok=J2a5AdqZ' }
 ];
@@ -147,14 +148,7 @@ const Home = () => {
                 </Button>
               </a>
             </div>
-            <div className="hidden lg:flex justify-center items-center">
-              <img
-                src="https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/0ieg8s08_Evandro-nobg.png"
-                alt="Alberto Filgueiras"
-                className="max-h-[580px] object-contain drop-shadow-[0_0_40px_rgba(34,197,94,0.3)]"
-                data-testid="hero-champion-photo"
-              />
-            </div>
+            <div className="hidden lg:block" />
           </div>
         </div>
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
