@@ -9,7 +9,7 @@ const whatsappLink = "https://wa.me/610415661366?text=" + encodeURIComponent("Ol
 const carouselImages = [
   { src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/b1ny74e0_Filgueiras_Flamengo.png", alt: "Alberto Filgueiras no Clube de Regatas do Flamengo" },
   { src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/7lm63nux_image.png", alt: "Alberto Filgueiras com a Seleção Brasileira de Voleibol de Praia" },
-  { src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/tdi568zl_image.png", alt: "Alberto Filgueiras em treinamento de futebol" },
+  { src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/hph9r6id_Dunbar.jpg", alt: "Alberto Filgueiras no Dunbar Rovers FC" },
   { src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/rgiuzvqm_image.png", alt: "Alberto Filgueiras palestrando para o Cairns Taipans" }
 ];
 
@@ -149,14 +149,9 @@ const Home = () => {
             </div>
             <div className="hidden lg:flex justify-center items-center">
               <img
-                src="https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/ct7kmf8w_image.png"
-                alt="Alberto Filgueiras com atleta campeão"
-                className="max-h-[520px] object-cover"
-                style={{
-                  mixBlendMode: 'darken',
-                  WebkitMaskImage: 'radial-gradient(ellipse 65% 70% at 50% 45%, black 55%, transparent 90%)',
-                  maskImage: 'radial-gradient(ellipse 65% 70% at 50% 45%, black 55%, transparent 90%)'
-                }}
+                src="https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/0ieg8s08_Evandro-nobg.png"
+                alt="Alberto Filgueiras"
+                className="max-h-[580px] object-contain drop-shadow-[0_0_40px_rgba(34,197,94,0.3)]"
                 data-testid="hero-champion-photo"
               />
             </div>
@@ -195,7 +190,7 @@ const Home = () => {
           <div className="flex animate-scroll-logos">
             {[...scrollLogos, ...scrollLogos].map((inst, idx) => (
               <div key={idx} className="flex-shrink-0 mx-6 flex items-center justify-center" style={{ minWidth: '120px' }}>
-                <div className="bg-white/10 rounded-xl p-3 hover:bg-white/20 transition-colors"><img src={inst.logo} alt={inst.name} className="h-14 w-14 object-contain" title={inst.name} /></div>
+                <div className="bg-[#DBDBDB] rounded-xl p-3 hover:bg-[#c9c9c9] transition-colors"><img src={inst.logo} alt={inst.name} className="h-14 w-14 object-contain" title={inst.name} /></div>
               </div>
             ))}
           </div>
@@ -284,7 +279,7 @@ const Home = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {institutionsList.map((inst, index) => (
                 <div key={index} className="flex flex-col items-center text-center group" data-testid={`institution-${index}`}>
-                  <div className="bg-white/10 rounded-xl p-3 mb-2 group-hover:bg-white/20 transition-colors">
+                  <div className="bg-[#DBDBDB] rounded-xl p-3 mb-2 group-hover:bg-[#c9c9c9] transition-colors">
                     <img src={inst.logo} alt={inst.name} className="h-12 w-12 object-contain" />
                   </div>
                   <span className="text-gray-400 text-xs leading-tight">{inst.name}</span>

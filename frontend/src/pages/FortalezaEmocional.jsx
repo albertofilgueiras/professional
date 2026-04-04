@@ -191,6 +191,41 @@ const CerebroAltaPerformance = () => {
           </a>
         </div>
       </section>
+
+      {/* Bonus Book */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-10">
+            <div className="inline-block mb-4 px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-full">
+              <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Bônus Exclusivo</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+              Ganhe o Livro<span className="text-green-500"> Gratuitamente!</span>
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Ao contratar o Programa Cérebro em Alta Performance, você recebe <span className="text-green-400 font-bold">gratuitamente</span> o livro "O Cérebro em Alta Performance" — o guia completo de neurociência aplicada ao esporte.
+            </p>
+          </div>
+          <div className="flex flex-col items-center">
+            <a href="https://a.co/d/01aO55XF" target="_blank" rel="noopener noreferrer" className="group" data-testid="bonus-book-link">
+              <div className="relative overflow-hidden rounded-2xl border-2 border-green-900/30 group-hover:border-green-500/60 transition-all shadow-2xl group-hover:shadow-green-900/30">
+                <img
+                  src="https://m.media-amazon.com/images/I/61GK4G5GkIL._SX445_.jpg"
+                  alt="O Cérebro em Alta Performance"
+                  className="w-64 h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                  data-testid="bonus-book-cover"
+                />
+                <div className="absolute top-3 right-3 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  GRÁTIS
+                </div>
+              </div>
+            </a>
+            <p className="mt-6 text-gray-400 text-sm text-center max-w-md">
+              Clique na capa para conhecer o livro na Amazon. Ao contratar o programa, você recebe um exemplar sem custo adicional.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
