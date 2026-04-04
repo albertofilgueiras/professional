@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { services } from '../mock';
-import { CheckCircle, Video, Users, Presentation, Zap } from 'lucide-react';
+import { CheckCircle, Video, Users, Presentation, Zap, BookOpen, ShoppingCart } from 'lucide-react';
 
 const serviceIcons = [Video, Users, Presentation];
 
@@ -13,6 +13,13 @@ const serviceWhatsappMessages = [
 ];
 
 const whatsappLink = "https://wa.me/610415661366?text=" + encodeURIComponent("Olá, gostaria de mais informações de como marcar o meu primeiro atendimento.");
+
+const books = [
+  { title: 'O Cérebro em Alta Performance', cover: 'https://m.media-amazon.com/images/I/61GK4G5GkIL._SX445_.jpg', link: 'https://a.co/d/01aO55XF', desc: 'Descubra como a neurociência pode transformar sua performance. Bases científicas do treinamento mental e da preparação psicológica para atletas.' },
+  { title: 'Psicologia do Esporte: Representações Sociais & Interdisciplinaridade', cover: 'https://m.media-amazon.com/images/I/61Nl8ajKdwL._SY425_.jpg', link: 'https://a.co/d/00NlcZkJ', desc: 'Obra interdisciplinar que explora as representações sociais no contexto esportivo, conectando psicologia, sociologia e educação física.' },
+  { title: 'Curso de Psicologia aplicada à Educação Física', cover: 'https://m.media-amazon.com/images/I/41M3VT9Vg0S._SY466_.jpg', link: 'https://a.co/d/02KyHJPr', desc: 'Material essencial para profissionais de educação física que desejam compreender os fundamentos psicológicos aplicados à prática esportiva.' },
+  { title: 'Psicologia do Esporte e do Exercício: Modelos Teóricos, Pesquisa e Intervenção', cover: 'https://m.media-amazon.com/images/I/71EA1htMvwL._SY466_.jpg', link: 'https://a.co/d/06Sma8zJ', desc: 'Referência completa abrangendo modelos teóricos, métodos de pesquisa e estratégias de intervenção em psicologia do esporte.' }
+];
 
 const Services = () => {
   return (
@@ -138,6 +145,25 @@ const Services = () => {
               Agendar pelo WhatsApp
             </Button>
           </a>
+        </div>
+      </section>
+
+      {/* Books */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="flex items-center mb-8"><BookOpen className="w-8 h-8 text-green-500 mr-3" /><h2 className="text-3xl font-bold text-white">Livros</h2></div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {books.map((book, i) => (
+              <Card key={i} className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 overflow-hidden hover:border-green-500/50 transition-all group" data-testid={`service-book-card-${i}`}>
+                <div className="aspect-[3/4] overflow-hidden bg-gray-800"><img src={book.cover} alt={book.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform" /></div>
+                <div className="p-4">
+                  <h3 className="text-sm font-bold text-white mb-2 leading-tight">{book.title}</h3>
+                  <p className="text-gray-400 text-xs mb-3 leading-relaxed">{book.desc}</p>
+                  <a href={book.link} target="_blank" rel="noopener noreferrer"><Button className="w-full bg-green-600 hover:bg-green-700 text-white text-xs py-2"><ShoppingCart className="w-3 h-3 mr-1" />Comprar na Amazon</Button></a>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
     </div>

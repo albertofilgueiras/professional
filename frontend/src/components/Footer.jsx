@@ -10,34 +10,25 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">
-              <span className="text-white">Alberto</span>
-              <span className="text-green-500"> Filgueiras</span>
-            </h3>
-            <p className="text-gray-400 text-sm">
-              Psicólogo esportivo, pesquisador e professor universitário com mais de 20 anos de experiência.
-            </p>
+            <h3 className="text-xl font-bold mb-4"><span className="text-white">Alberto</span><span className="text-green-500"> Filgueiras</span></h3>
+            <p className="text-gray-400 text-sm">Psicólogo esportivo, pesquisador e professor universitário com mais de 20 anos de experiência.</p>
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4 text-green-500">Links Rápidos</h4>
-            <ul className="space-y-2 text-gray-400">
+            <ul className="space-y-2 text-gray-400 text-sm">
               <li><Link to="/" className="hover:text-green-500 transition-colors">Home</Link></li>
               <li><Link to="/servicos" className="hover:text-green-500 transition-colors">Serviços</Link></li>
               <li><Link to="/programa-cerebro-alta-performance" className="hover:text-green-500 transition-colors">Cérebro em Alta Performance</Link></li>
+              <li><Link to="/livros" className="hover:text-green-500 transition-colors">Livros</Link></li>
+              <li><Link to="/curso-psicologia-processos-basicos" className="hover:text-green-500 transition-colors">Curso Psicologia e Processos Básicos</Link></li>
               <li><Link to="/contato" className="hover:text-green-500 transition-colors">Contato</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="text-lg font-semibold mb-4 text-green-500">Contato</h4>
             <ul className="space-y-3 text-gray-400">
-              <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-green-500" />
-                <a href={whatsappLink} className="hover:text-green-500 transition-colors">+61 0415 661 366</a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Instagram className="w-4 h-4 text-green-500" />
-                <a href="https://www.instagram.com/albertofilgueiras.phd/" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors">@albertofilgueiras.phd</a>
-              </li>
+              <li className="flex items-center space-x-2"><Phone className="w-4 h-4 text-green-500" /><a href={whatsappLink} className="hover:text-green-500 transition-colors">+61 0415 661 366</a></li>
+              <li className="flex items-center space-x-2"><Instagram className="w-4 h-4 text-green-500" /><a href="https://www.instagram.com/albertofilgueiras.phd/" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors">@albertofilgueiras.phd</a></li>
             </ul>
           </div>
         </div>
