@@ -32,7 +32,7 @@ if (isDev && config.enableHealthCheck) {
 }
 
 const cracoConfig = {
-  // ✅ Disable ESLint during production build (prevents CI exit code 1)
+  // Disable ESLint during production build
   eslint: {
     enable: false,
   },
@@ -85,7 +85,7 @@ if (isDev && config.enableVisualEdits && babelMetadataPlugin) {
   };
 }
 
-// Configure dev server ONLY in development
+// Configure dev server only in development
 if (isDev && (config.enableVisualEdits || config.enableHealthCheck)) {
   cracoConfig.devServer = (devServerConfig) => {
     // Visual edits dev-server setup
@@ -116,7 +116,3 @@ if (isDev && (config.enableVisualEdits || config.enableHealthCheck)) {
 }
 
 module.exports = cracoConfig;
-  };
-}
-
-module.exports = webpackConfig;
