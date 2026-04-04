@@ -5,7 +5,7 @@ import { Label } from '../components/ui/label';
 import { Textarea } from '../components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { useToast } from '../hooks/use-toast';
-import { Phone, Instagram, MapPin, Send } from 'lucide-react';
+import { Phone, Instagram, Linkedin, Send } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -187,11 +187,17 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <MapPin className="w-6 h-6 text-green-500 mt-1" />
+                    <Linkedin className="w-6 h-6 text-green-500 mt-1" />
                     <div>
-                      <h4 className="font-semibold text-white">Localização</h4>
-                      <p className="text-gray-300">Cairns, Austrália</p>
-                      <p className="text-sm text-gray-400 mt-1">Atendimentos online</p>
+                      <h4 className="font-semibold text-white">LinkedIn</h4>
+                      <a
+                        href="https://www.linkedin.com/in/alberto-filgueiras-5565561b0"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-green-400 hover:underline"
+                      >
+                        Alberto Filgueiras
+                      </a>
                     </div>
                   </div>
                 </CardContent>

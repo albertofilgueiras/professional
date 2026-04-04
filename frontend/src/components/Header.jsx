@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Instagram, Zap } from 'lucide-react';
+import { Menu, X, Instagram } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header = () => {
@@ -11,9 +11,8 @@ const Header = () => {
 
   const menuItems = [
     { path: '/', label: 'Home' },
-    { path: '/sobre', label: 'Sobre' },
     { path: '/servicos', label: 'Serviços' },
-    { path: '/programa-fortaleza-emocional', label: 'Fortaleza Emocional' },
+    { path: '/programa-cerebro-alta-performance', label: 'Cérebro em Alta Performance' },
     { path: '/contato', label: 'Contato' }
   ];
 
@@ -28,7 +27,6 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item) => (
               <Link
@@ -44,59 +42,31 @@ const Header = () => {
                 }`} />
               </Link>
             ))}
-            <a
-              href="https://www.instagram.com/albertofilgueiras.phd/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-green-500 transition-colors"
-            >
+            <a href="https://www.instagram.com/albertofilgueiras.phd/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-green-500 transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
             <Link to="/login">
-              <Button className="bg-green-600 hover:bg-green-700 text-white border-0">
-                Login
-              </Button>
+              <Button className="bg-green-600 hover:bg-green-700 text-white border-0">Login</Button>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-gray-300"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            data-testid="mobile-menu-btn"
-          >
+          <button className="lg:hidden text-gray-300" onClick={() => setIsMenuOpen(!isMenuOpen)} data-testid="mobile-menu-btn">
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 space-y-3">
             {menuItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`block text-gray-300 hover:text-green-500 transition-colors font-medium py-2 ${
-                  isActive(item.path) ? 'text-green-500' : ''
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <Link key={item.path} to={item.path} className={`block text-gray-300 hover:text-green-500 transition-colors font-medium py-2 ${isActive(item.path) ? 'text-green-500' : ''}`} onClick={() => setIsMenuOpen(false)}>
                 {item.label}
               </Link>
             ))}
-            <a
-              href="https://www.instagram.com/albertofilgueiras.phd/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 text-gray-300 hover:text-green-500 transition-colors py-2"
-            >
-              <Instagram className="w-5 h-5" />
-              <span>Instagram</span>
+            <a href="https://www.instagram.com/albertofilgueiras.phd/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-300 hover:text-green-500 transition-colors py-2">
+              <Instagram className="w-5 h-5" /><span>Instagram</span>
             </a>
             <Link to="/login" onClick={() => setIsMenuOpen(false)}>
-              <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                Login
-              </Button>
+              <Button className="w-full bg-green-600 hover:bg-green-700 text-white">Login</Button>
             </Link>
           </div>
         )}

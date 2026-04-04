@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
-import { Brain, Target, Zap, TrendingUp, Heart, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { Brain, Target, Zap, TrendingUp, Heart, ChevronLeft, ChevronRight, ArrowRight, X, GraduationCap, Award, BookOpen, Play, Briefcase } from 'lucide-react';
 
 const whatsappLink = "https://wa.me/610415661366?text=" + encodeURIComponent("Olá, gostaria de mais informações de como marcar o meu primeiro atendimento.");
 
@@ -16,17 +16,62 @@ const carouselImages = [
     alt: "Alberto Filgueiras com a Seleção Brasileira de Voleibol de Praia"
   },
   {
-    src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/hph9r6id_Dunbar.jpg",
-    alt: "Alberto Filgueiras no Dunbar Rovers FC"
+    src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/tdi568zl_image.png",
+    alt: "Alberto Filgueiras em treinamento de futebol"
   },
   {
     src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/rgiuzvqm_image.png",
     alt: "Alberto Filgueiras palestrando para o Cairns Taipans"
+  },
+  {
+    src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/ct7kmf8w_image.png",
+    alt: "Alberto Filgueiras com atleta campeão"
   }
+];
+
+const allLogos = [
+  { name: 'Comitê Olímpico Brasileiro', logo: 'https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/bdp32jau_image.png' },
+  { name: 'Clube de Regatas do Flamengo', logo: 'https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/r8pkqqrb_image.png' },
+  { name: 'Team Nogueira', logo: 'https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/rhiwo5gh_image.png' },
+  { name: 'Federação de Karatê do Estado do RJ', logo: 'https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/ffszwvc7_image.png' },
+  { name: 'Clube de Futebol do Zico', logo: 'https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/vbkci487_image.png' },
+  { name: 'Team Octógono', logo: 'https://images.tapology.com/gyms/logos/10770/profile/10770-academia-octogono.jpg?1764027205' },
+  { name: 'Cairns Taipans', logo: 'https://upload.wikimedia.org/wikipedia/en/f/f9/Cairns_Taipans_logo.svg' },
+  { name: 'Dunbar Rovers FC', logo: 'https://dunbarroversfc.com/wp-content/uploads/2018/02/logo-home-final-small.png' },
+  { name: 'CQUniversity', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgBraUGiNLpKnf5iKa7cwO6PkzrSe9uZbhew&s' },
+  { name: 'University of Gloucestershire', logo: 'https://penpostgrad.com/wp-content/uploads/2024/12/UOG-LOGO-WITH-CREST-01.png' },
+  { name: 'UERJ', logo: 'https://upload.wikimedia.org/wikipedia/en/4/4f/Rio_de_Janeiro_State_University_logo.png' },
+  { name: 'CBF Academy', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdCTHasvByU1LE32rxCe92LVnQinNhro70sw&s' },
+  { name: 'Universidade Santa Ursula', logo: 'https://www.developmentaid.org/files/organizationLogos/universidade-santa-ursula-246313.jpg' },
+  { name: 'UNISUAM', logo: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0022/9306/brand.gif?itok=J2a5AdqZ' }
+];
+
+const education = [
+  { degree: 'PhD em Psicologia', institution: 'PUC-Rio / Western University, Canadá' },
+  { degree: 'Pós-Doutorado em Ciências do Esporte e Reabilitação', institution: 'Universidade de Camberra, Austrália' },
+  { degree: 'Pós-Doutorado em Educação Física', institution: 'Universidade Católica de Brasília' },
+  { degree: 'Licença C de Treinador de Futebol', institution: 'Football Australia / Asian Football Confederation' },
+  { degree: 'Mestrado em Psicologia', institution: 'Pontifícia Universidade Católica do Rio de Janeiro' },
+  { degree: 'Bacharelado em Psicologia', institution: 'Universidade Federal do Rio de Janeiro' }
+];
+
+const achievements = [
+  '75+ publicações científicas em revistas internacionais',
+  'Publicações em PNAS, Frontiers in Psychology, Journal of Sports Sciences',
+  '20 anos de experiência em psicologia do esporte',
+  'Trabalho com atletas de futebol, MMA, karatê, vôlei, basquete e outros esportes',
+  'Docente em cursos de pós-graduação em universidades do Brasil, UK e Austrália'
+];
+
+const videos = [
+  { id: 'cDdVcEp6OXk' },
+  { id: 'S0GjsohIpPU' },
+  { id: '5Js8edSVRro' }
 ];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -35,23 +80,57 @@ const Home = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    const dismissed = sessionStorage.getItem('popup_dismissed');
+    if (!dismissed) {
+      const t = setTimeout(() => setShowPopup(true), 2000);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
+  const closePopup = () => {
+    setShowPopup(false);
+    sessionStorage.setItem('popup_dismissed', 'true');
+  };
+
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
 
   return (
     <div className="min-h-screen bg-black">
+      {/* Discount Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm" data-testid="discount-popup-overlay">
+          <div className="relative bg-gradient-to-br from-gray-900 to-black border border-green-500/50 rounded-2xl p-8 max-w-md mx-4 shadow-2xl shadow-green-900/30" data-testid="discount-popup">
+            <button onClick={closePopup} className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors" data-testid="popup-close-btn">
+              <X className="w-6 h-6" />
+            </button>
+            <div className="text-center">
+              <div className="bg-green-500/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-green-500" />
+              </div>
+              <h3 className="text-2xl font-black text-white mb-2">Oferta Especial!</h3>
+              <div className="bg-green-600 text-white text-3xl font-black py-3 px-6 rounded-xl mb-4 inline-block">10% OFF</div>
+              <p className="text-gray-300 mb-2 text-lg font-semibold">Programa Cérebro em Alta Performance</p>
+              <p className="text-gray-400 mb-6">Aproveite esta oferta exclusiva pelos próximos 30 dias!</p>
+              <a href={"https://wa.me/610415661366?text=" + encodeURIComponent("Olá, gostaria de mais informações sobre o Programa Cérebro em Alta Performance.")} target="_blank" rel="noopener noreferrer">
+                <Button className="w-full bg-green-600 hover:bg-green-700 text-white text-lg py-6 font-bold" data-testid="popup-cta-btn">
+                  <Zap className="w-5 h-5 mr-2" />
+                  Quero Aproveitar
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1490108474814-221f6198acc5"
-            alt="Soccer field"
-            className="w-full h-full object-cover opacity-40"
-          />
+          <img src="https://images.unsplash.com/photo-1490108474814-221f6198acc5" alt="Soccer field" className="w-full h-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
         </div>
-
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl">
             <div className="inline-block mb-6 px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-full">
@@ -59,30 +138,26 @@ const Home = () => {
                 Psicólogo do Esporte, Mental Coaching e Consultoria Esportiva
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 leading-tight animate-slide-in" data-testid="hero-title">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-2 leading-tight" data-testid="hero-title">
               Alberto Filgueiras
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600"> PhD</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl" data-testid="hero-description">
+            <p className="text-xl md:text-2xl text-green-400 font-semibold mb-4" data-testid="hero-phd">
+              PhD em Neurociência Cognitiva
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 mb-4 max-w-2xl" data-testid="hero-description">
               Preparação Mental para o alto rendimento com equilíbrio e bem-estar
             </p>
-            <div className="flex flex-col sm:flex-row gap-6">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white text-lg px-10 py-7 rounded-xl font-bold shadow-lg shadow-green-900/50 hover:shadow-green-900/70 transition-all sport-glow" data-testid="hero-whatsapp-btn">
-                  <Zap className="w-6 h-6 mr-2" />
-                  Agendar Consulta
-                </Button>
-              </a>
-              <Link to="/servicos">
-                <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-xl border-2 border-green-500 text-green-400 hover:bg-green-500/10 font-bold" data-testid="hero-services-btn">
-                  Serviços
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
-            </div>
+            <p className="text-base md:text-lg text-gray-400 mb-12 max-w-2xl italic" data-testid="hero-specialist">
+              Um dos maiores especialistas em psicologia e neurociência aplicada ao esporte e à alta performance do Brasil
+            </p>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white text-lg px-10 py-7 rounded-xl font-bold shadow-lg shadow-green-900/50 hover:shadow-green-900/70 transition-all sport-glow" data-testid="hero-whatsapp-btn">
+                <Zap className="w-6 h-6 mr-2" />
+                Agendar Consulta
+              </Button>
+            </a>
           </div>
         </div>
-
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-green-500 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-green-500 rounded-full mt-2" />
@@ -122,59 +197,98 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Bio Section (from About) */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8" data-testid="bio-card">
+            <h2 className="text-3xl font-bold text-white mb-6">Quem Sou Eu</h2>
+            <div className="space-y-4 text-gray-300 text-base leading-relaxed">
+              <p>Sou Alberto Filgueiras, PhD FHEA, psicólogo, pesquisador e professor universitário com mais de 20 anos de experiência na área da Psicologia do Esporte, do Exercício e Psicoterapia. Minha formação acadêmica é sólida e contínua, o que me faz trabalhar sempre com técnicas fundamentadas em evidências científicas.</p>
+              <p>Como professor, atuei em grandes universidades do Brasil (PUC-RJ, UERJ e Universidade Católica de Brasília), da Austrália (University of Canberra e atualmente CQUniversity), e do Reino Unido (University of Gloucestershire). Como psicólogo do esporte e psicoterapeuta, tenho passagens pelo Clube de Regatas do Flamengo, pelo Comitê Olímpico Brasileiro, pela Federação de Karatê do Estado do Rio de Janeiro, pela Team Nogueira, além de atendimentos individuais em diversos esportes como futebol, basquete, vôlei, vôlei de praia, MMA, karatê, rúgbi, atletismo e tênis.</p>
+              <p>Eu sou um profissional que forma outros profissionais, faço parte do corpo docente dos maiores cursos de formação na área, incluindo a pós-graduação em psicologia do esporte e do exercício da Universidade Federal de São Carlos e da formação em psicologia do futebol pela CBF Academy.</p>
+              <p>Minha abordagem combina Neurociência Cognitiva e Psicologia Comportamental, sempre baseada em evidências científicas e adaptada às necessidades específicas de cada atleta ou equipe.</p>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Auto-scrolling Logo Carousel */}
+      <section className="py-16 bg-gradient-to-b from-black to-gray-900 overflow-hidden">
+        <div className="container mx-auto px-4 mb-8">
+          <h3 className="text-center text-lg text-gray-400 font-medium uppercase tracking-wider">Instituições Parceiras e Passagens</h3>
+        </div>
+        <div className="relative" data-testid="logo-carousel">
+          <div className="flex animate-scroll-logos">
+            {[...allLogos, ...allLogos].map((inst, idx) => (
+              <div key={idx} className="flex-shrink-0 mx-6 flex items-center justify-center" style={{ minWidth: '120px' }}>
+                <div className="bg-white/10 rounded-xl p-3 hover:bg-white/20 transition-colors">
+                  <img src={inst.logo} alt={inst.name} className="h-14 w-14 object-contain" title={inst.name} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section className="py-24 bg-black relative">
+      <section className="py-24 bg-gray-900 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6" data-testid="features-title">
               Treinamento Mental e
-              <span className="text-green-500"> Excelência Emocional</span>
+              <span className="text-green-500"> Inteligência Emocional</span>
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Trabalho especializado para atletas, clubes e equipes esportivas
             </p>
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8 hover:border-green-500/50 transition-all group hover:shadow-2xl hover:shadow-green-900/20" data-testid="feature-card-mental">
               <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
                 <Brain className="w-8 h-8 text-green-500" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">Controle Mental</h3>
-              <p className="text-gray-400 leading-relaxed">
-                Domine a ansiedade e mantenha o controle emocional em momentos de alta pressão
-              </p>
+              <p className="text-gray-400 leading-relaxed">Domine a ansiedade e mantenha o controle emocional em momentos de alta pressão</p>
             </Card>
-
             <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8 hover:border-green-500/50 transition-all group hover:shadow-2xl hover:shadow-green-900/20" data-testid="feature-card-focus">
               <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
                 <Target className="w-8 h-8 text-green-500" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">Foco Total</h3>
-              <p className="text-gray-400 leading-relaxed">
-                Concentração máxima eliminando todas as distrações durante a competição
-              </p>
+              <p className="text-gray-400 leading-relaxed">Concentração máxima eliminando todas as distrações durante a competição</p>
             </Card>
-
             <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8 hover:border-green-500/50 transition-all group hover:shadow-2xl hover:shadow-green-900/20" data-testid="feature-card-balance">
               <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
                 <Heart className="w-8 h-8 text-green-500" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">Equilíbrio</h3>
-              <p className="text-gray-400 leading-relaxed">
-                Apoio ao equilíbrio entre saúde mental, bem-estar e performance atlética de alto nível
-              </p>
+              <p className="text-gray-400 leading-relaxed">Apoio ao equilíbrio entre saúde mental, bem-estar e performance atlética de alto nível</p>
             </Card>
-
             <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8 hover:border-green-500/50 transition-all group hover:shadow-2xl hover:shadow-green-900/20" data-testid="feature-card-growth">
               <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
                 <TrendingUp className="w-8 h-8 text-green-500" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">Crescimento</h3>
-              <p className="text-gray-400 leading-relaxed">
-                Desenvolvimento integral com motivação, disciplina e qualidade de vida
-              </p>
+              <p className="text-gray-400 leading-relaxed">Desenvolvimento integral com motivação, disciplina e qualidade de vida</p>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Education (from About) */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="flex items-center mb-8">
+            <GraduationCap className="w-8 h-8 text-green-500 mr-3" />
+            <h2 className="text-3xl font-bold text-white">Formação Acadêmica</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {education.map((item, index) => (
+              <Card key={index} className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-6 hover:border-green-500/50 transition-all" data-testid={`education-card-${index}`}>
+                <h3 className="text-lg font-bold text-white mb-2">{item.degree}</h3>
+                <p className="text-green-400 text-sm">{item.institution}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -184,52 +298,38 @@ const Home = () => {
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle, #22c55e 1px, transparent 1px)', backgroundSize: '50px 50px'}} />
         </div>
-        
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-block mb-6 px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-full">
               <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Experiência</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-              TRAJETÓRIA
-              <span className="text-green-500"> PROFISSIONAL</span>
+              TRAJETÓRIA<span className="text-green-500"> PROFISSIONAL</span>
             </h2>
           </div>
-
           <div className="max-w-4xl mx-auto mb-12">
             <div className="relative rounded-2xl overflow-hidden aspect-video bg-gray-900" data-testid="experience-carousel">
               {carouselImages.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="absolute inset-0 transition-opacity duration-700"
-                  style={{ opacity: currentSlide === idx ? 1 : 0 }}
-                >
+                <div key={idx} className="absolute inset-0 transition-opacity duration-700" style={{ opacity: currentSlide === idx ? 1 : 0 }}>
                   <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                     <p className="text-white text-lg font-medium">{img.alt}</p>
                   </div>
                 </div>
               ))}
-
               <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-green-600/80 text-white p-3 rounded-full transition-colors" data-testid="carousel-prev">
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-green-600/80 text-white p-3 rounded-full transition-colors" data-testid="carousel-next">
                 <ChevronRight className="w-6 h-6" />
               </button>
-
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                 {carouselImages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentSlide(idx)}
-                    className={`h-3 rounded-full transition-all ${currentSlide === idx ? 'bg-green-500 w-8' : 'bg-white/50 w-3'}`}
-                  />
+                  <button key={idx} onClick={() => setCurrentSlide(idx)} className={`h-3 rounded-full transition-all ${currentSlide === idx ? 'bg-green-500 w-8' : 'bg-white/50 w-3'}`} />
                 ))}
               </div>
             </div>
           </div>
-
           <div className="max-w-4xl mx-auto text-center">
             <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8" data-testid="credentials-card">
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
@@ -237,16 +337,73 @@ const Home = () => {
                 <span className="text-green-400 font-semibold">Confederação Asiática de Futebol (AFC)</span>.
               </p>
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed mt-4">
-                Passagens pelo{' '}
-                <span className="text-white font-semibold">Comitê Olímpico Brasileiro</span>,{' '}
-                <span className="text-white font-semibold">Team Nogueira</span>,{' '}
-                <span className="text-white font-semibold">Federação de Karatê do Estado do Rio de Janeiro</span>,{' '}
-                <span className="text-white font-semibold">Clube de Regatas do Flamengo</span>,{' '}
-                <span className="text-white font-semibold">Clube de Futebol do Zico</span>,{' '}
-                <span className="text-white font-semibold">Team Octógono</span>,{' '}
-                <span className="text-white font-semibold">Cairns Taipans</span> e{' '}
-                <span className="text-white font-semibold">Dunbar Rovers FC</span>.
+                Passagens pelo <span className="text-white font-semibold">Comitê Olímpico Brasileiro</span>, <span className="text-white font-semibold">Team Nogueira</span>, <span className="text-white font-semibold">Federação de Karatê do Estado do Rio de Janeiro</span>, <span className="text-white font-semibold">Clube de Regatas do Flamengo</span>, <span className="text-white font-semibold">Clube de Futebol do Zico</span>, <span className="text-white font-semibold">Team Octógono</span>, <span className="text-white font-semibold">Cairns Taipans</span> e <span className="text-white font-semibold">Dunbar Rovers FC</span>.
               </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements (from About) */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="flex items-center mb-8">
+            <Award className="w-8 h-8 text-green-500 mr-3" />
+            <h2 className="text-3xl font-bold text-white">Destaques e Conquistas</h2>
+          </div>
+          <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8" data-testid="achievements-card">
+            <ul className="space-y-4">
+              {achievements.map((achievement, index) => (
+                <li key={index} className="flex items-start">
+                  <div className="bg-green-500/20 rounded-full p-1 mr-3 mt-1 flex-shrink-0">
+                    <Award className="w-5 h-5 text-green-500" />
+                  </div>
+                  <span className="text-gray-300 text-base">{achievement}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </div>
+      </section>
+
+      {/* YouTube Videos (from About) */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="flex items-center mb-8">
+            <Play className="w-8 h-8 text-green-500 mr-3" />
+            <h2 className="text-3xl font-bold text-white">Divulgação Científica</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {videos.map((video, index) => (
+              <div key={index} className="rounded-xl overflow-hidden border border-green-900/30 hover:border-green-500/50 transition-all" data-testid={`video-embed-${index}`}>
+                <div className="aspect-video">
+                  <iframe src={`https://www.youtube.com/embed/${video.id}`} title={`Divulgação Científica ${index + 1}`} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen className="w-full h-full" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Research Areas (from About) */}
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="flex items-center mb-8">
+            <BookOpen className="w-8 h-8 text-green-500 mr-3" />
+            <h2 className="text-3xl font-bold text-white">Áreas de Pesquisa</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-6 text-center hover:border-green-500/50 transition-all">
+              <h3 className="text-lg font-bold text-white mb-3">Cognição e Performance Esportiva</h3>
+              <p className="text-gray-400 text-sm">Funções executivas, tomada de decisão e processamento cognitivo em atletas</p>
+            </Card>
+            <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-6 text-center hover:border-green-500/50 transition-all">
+              <h3 className="text-lg font-bold text-white mb-3">Saúde Mental no Esporte</h3>
+              <p className="text-gray-400 text-sm">Ansiedade, depressão, estresse e bem-estar psicológico em contextos esportivos</p>
+            </Card>
+            <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-6 text-center hover:border-green-500/50 transition-all">
+              <h3 className="text-lg font-bold text-white mb-3">Testes Psicológicos Transculturais</h3>
+              <p className="text-gray-400 text-sm">Validação e adaptação de instrumentos psicológicos em diferentes culturas</p>
             </Card>
           </div>
         </div>
@@ -260,8 +417,7 @@ const Home = () => {
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
-            PRONTO PARA<br />
-            <span className="text-black">DOMINAR SUA MENTE?</span>
+            PRONTO PARA<br /><span className="text-black">DOMINAR SUA MENTE?</span>
           </h2>
           <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto">
             Agende sua primeira sessão e transforme sua performance através da psicologia do esporte

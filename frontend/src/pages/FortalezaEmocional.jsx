@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
-import { Shield, Brain, Target, Heart, Zap, CheckCircle, ArrowRight, ChevronRight } from 'lucide-react';
+import { Shield, Brain, Target, Zap, CheckCircle } from 'lucide-react';
 
-const whatsappLink = "https://wa.me/610415661366?text=" + encodeURIComponent("Olá, quero mais informações sobre o Programa Fortaleza Emocional.");
+const whatsappLink = "https://wa.me/610415661366?text=" + encodeURIComponent("Olá, gostaria de mais informações sobre o Programa Cérebro em Alta Performance.");
 
 const programBenefits = [
   'Aumento comprovado da fortaleza mental e autoconfiança',
@@ -36,17 +35,13 @@ const programModules = [
   { title: 'Avaliação Final', desc: 'Reavaliação psicológica e plano de manutenção contínua' }
 ];
 
-const FortalezaEmocional = () => {
+const CerebroAltaPerformance = () => {
   return (
     <div className="min-h-screen bg-black">
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1652318694264-94cd2e2e5227"
-            alt="Jovens jogadores de futebol"
-            className="w-full h-full object-cover opacity-25"
-          />
+          <img src="https://images.unsplash.com/photo-1652318694264-94cd2e2e5227" alt="Jovens jogadores de futebol" className="w-full h-full object-cover opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
         </div>
@@ -57,7 +52,7 @@ const FortalezaEmocional = () => {
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight" data-testid="programa-title">
               Programa
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600"> Fortaleza Emocional</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600"> Cérebro em Alta Performance</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl">
               16 sessões para promover o controle e regulação emocional de atletas. A ciência comprova: o aumento da fortaleza mental e da autoconfiança em atletas de todos os níveis.
@@ -79,44 +74,28 @@ const FortalezaEmocional = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
                 O Que é o Programa
-                <span className="text-green-500"> Fortaleza Emocional?</span>
+                <span className="text-green-500"> Cérebro em Alta Performance?</span>
               </h2>
               <div className="space-y-4 text-gray-300 text-base leading-relaxed">
-                <p>
-                  O Programa Fortaleza Emocional é um programa estruturado de <span className="text-green-400 font-semibold">16 sessões</span> de intervenção psicológica baseada em evidências científicas, desenhado para desenvolver o controle e a regulação emocional de atletas de todos os níveis.
-                </p>
-                <p>
-                  Fundamentado em pesquisas publicadas em periódicos internacionais como <span className="text-white font-semibold">Frontiers in Psychology</span> e <span className="text-white font-semibold">International Journal of Environmental Research and Public Health</span>, o programa utiliza técnicas da Terapia Cognitivo-Comportamental e do Mindfulness para promover habilidades psicológicas essenciais à performance esportiva.
-                </p>
-                <p>
-                  Estudos demonstram que intervenções psicológicas estruturadas melhoram significativamente o controle do estresse, a gestão da avaliação de performance e o uso de recursos psicológicos, resultando em atletas mais confiantes, resilientes e equilibrados.
-                </p>
+                <p>O Programa Cérebro em Alta Performance é um programa estruturado de <span className="text-green-400 font-semibold">16 sessões</span> de intervenção psicológica baseada em evidências científicas, desenhado para desenvolver o controle e a regulação emocional de atletas de todos os níveis.</p>
+                <p>Fundamentado em pesquisas publicadas em periódicos internacionais como <span className="text-white font-semibold">Frontiers in Psychology</span> e <span className="text-white font-semibold">International Journal of Environmental Research and Public Health</span>, o programa utiliza técnicas da Terapia Cognitivo-Comportamental e do Mindfulness para promover habilidades psicológicas essenciais à performance esportiva.</p>
+                <p>Estudos demonstram que intervenções psicológicas estruturadas melhoram significativamente o controle do estresse, a gestão da avaliação de performance e o uso de recursos psicológicos, resultando em atletas mais confiantes, resilientes e equilibrados.</p>
               </div>
             </div>
             <div className="relative rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1748112442319-6780a8dd7528"
-                alt="Jovens jogadores de futebol conversando"
-                className="w-full h-full object-cover rounded-2xl border border-green-900/30"
-              />
+              <img src="https://images.unsplash.com/photo-1748112442319-6780a8dd7528" alt="Jovens jogadores de futebol" className="w-full h-full object-cover rounded-2xl border border-green-900/30" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Key Benefits */}
+      {/* Benefits */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
-              Benefícios
-              <span className="text-green-500"> Comprovados</span>
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Resultados baseados em evidências científicas internacionais
-            </p>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Benefícios<span className="text-green-500"> Comprovados</span></h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">Resultados baseados em evidências científicas internacionais</p>
           </div>
-
           <div className="grid md:grid-cols-2 gap-4 mb-12">
             {programBenefits.map((benefit, index) => (
               <div key={index} className="flex items-start p-4 bg-gradient-to-br from-gray-900 to-black border border-green-900/30 rounded-xl hover:border-green-500/50 transition-all" data-testid={`benefit-${index}`}>
@@ -125,8 +104,6 @@ const FortalezaEmocional = () => {
               </div>
             ))}
           </div>
-
-          {/* Highlight Cards */}
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8 hover:border-green-500/50 transition-all text-center group">
               <div className="bg-green-500/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-500/20 transition-colors">
@@ -153,25 +130,17 @@ const FortalezaEmocional = () => {
         </div>
       </section>
 
-      {/* Program Modules */}
+      {/* Modules */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
-              Estrutura do
-              <span className="text-green-500"> Programa</span>
-            </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              16 sessões cuidadosamente estruturadas para desenvolvimento progressivo
-            </p>
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Estrutura do<span className="text-green-500"> Programa</span></h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">16 sessões cuidadosamente estruturadas para desenvolvimento progressivo</p>
           </div>
-
           <div className="grid md:grid-cols-2 gap-4">
             {programModules.map((module, index) => (
               <div key={index} className="flex items-start p-4 bg-gradient-to-br from-gray-900/80 to-black border border-green-900/20 rounded-xl hover:border-green-500/40 transition-all group" data-testid={`module-${index}`}>
-                <div className="bg-green-600 text-white rounded-lg w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-sm group-hover:bg-green-500 transition-colors">
-                  {index + 1}
-                </div>
+                <div className="bg-green-600 text-white rounded-lg w-10 h-10 flex items-center justify-center mr-4 flex-shrink-0 font-bold text-sm group-hover:bg-green-500 transition-colors">{index + 1}</div>
                 <div>
                   <h3 className="font-bold text-white mb-1">{module.title}</h3>
                   <p className="text-sm text-gray-400">{module.desc}</p>
@@ -182,32 +151,19 @@ const FortalezaEmocional = () => {
         </div>
       </section>
 
-      {/* Image + Science Section */}
+      {/* Science */}
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1701872324421-f537bc8f61de"
-                alt="Jovens jogando futebol"
-                className="w-full h-full object-cover rounded-2xl border border-green-900/30"
-              />
+              <img src="https://images.unsplash.com/photo-1701872324421-f537bc8f61de" alt="Jovens jogando futebol" className="w-full h-full object-cover rounded-2xl border border-green-900/30" />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
-                Fundamentação
-                <span className="text-green-500"> Científica</span>
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Fundamentação<span className="text-green-500"> Científica</span></h2>
               <div className="space-y-4 text-gray-300 text-base leading-relaxed">
-                <p>
-                  O programa é fundamentado em estudos publicados em revistas científicas de alto impacto. Pesquisas demonstram que programas de intervenção psicológica baseados em Terapia Cognitivo-Comportamental melhoram significativamente as habilidades mentais dos atletas.
-                </p>
-                <p>
-                  Em um estudo com jovens jogadores de futebol, os resultados indicaram melhoria significativa no gerenciamento do estresse relacionado à avaliação de desempenho, bem como no uso de recursos e técnicas psicológicas após o programa de intervenção.
-                </p>
-                <p>
-                  A literatura científica destaca que variáveis como motivação, concentração, controle do estresse e autorregulação do humor são fundamentais para explicar diferenças na performance esportiva dos atletas.
-                </p>
+                <p>O programa é fundamentado em estudos publicados em revistas científicas de alto impacto. Pesquisas demonstram que programas de intervenção psicológica baseados em Terapia Cognitivo-Comportamental melhoram significativamente as habilidades mentais dos atletas.</p>
+                <p>Em um estudo com jovens jogadores de futebol, os resultados indicaram melhoria significativa no gerenciamento do estresse relacionado à avaliação de desempenho, bem como no uso de recursos e técnicas psicológicas após o programa de intervenção.</p>
+                <p>A literatura científica destaca que variáveis como motivação, concentração, controle do estresse e autorregulação do humor são fundamentais para explicar diferenças na performance esportiva dos atletas.</p>
               </div>
               <div className="mt-6 space-y-2 text-sm text-gray-500">
                 <p>Referências: Olmedilla et al. (2019) Frontiers in Psychology; Filgueiras et al. (2025) Frontiers in Psychology; Filgueiras et al. (2022) Int. J. Environ. Res. Public Health.</p>
@@ -217,26 +173,16 @@ const FortalezaEmocional = () => {
         </div>
       </section>
 
-      {/* Pricing / CTA Section */}
+      {/* CTA */}
       <section className="py-24 bg-gradient-to-br from-green-600 to-green-800 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1710789020364-a76c9517ea7e"
-            alt="Jovens jogadores celebrando"
-            className="w-full h-full object-cover opacity-15"
-          />
+          <img src="https://images.unsplash.com/photo-1710789020364-a76c9517ea7e" alt="Jovens jogadores celebrando" className="w-full h-full object-cover opacity-15" />
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-green-700/90" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
-            Pacotes com Parcelamento Próprio
-          </h2>
-          <p className="text-xl md:text-2xl mb-4 text-white/90 max-w-3xl mx-auto">
-            O Programa Fortaleza Emocional é oferecido em pacotes com condições especiais de parcelamento.
-          </p>
-          <p className="text-lg mb-12 text-white/70 max-w-2xl mx-auto">
-            Para saber mais sobre os pacotes e valores, clique abaixo e fale conosco diretamente pelo WhatsApp.
-          </p>
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-6">Pacotes com Parcelamento Próprio</h2>
+          <p className="text-xl md:text-2xl mb-4 text-white/90 max-w-3xl mx-auto">O Programa Cérebro em Alta Performance é oferecido em pacotes com condições especiais de parcelamento.</p>
+          <p className="text-lg mb-12 text-white/70 max-w-2xl mx-auto">Para saber mais sobre os pacotes e valores, clique abaixo e fale conosco diretamente pelo WhatsApp.</p>
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-black hover:bg-gray-900 text-white text-xl px-12 py-8 rounded-2xl font-bold shadow-2xl hover:shadow-black/50 transition-all" data-testid="programa-cta-btn">
               <Zap className="w-6 h-6 mr-3" />
@@ -249,4 +195,4 @@ const FortalezaEmocional = () => {
   );
 };
 
-export default FortalezaEmocional;
+export default CerebroAltaPerformance;
