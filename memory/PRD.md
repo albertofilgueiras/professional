@@ -1,55 +1,55 @@
 # Alberto Filgueiras PhD - Professional Website
 
 ## Problem Statement
-Build a professional website for Alberto Filgueiras, a sports psychologist offering consulting, mental coaching, cognitive training, and a structured emotional fortitude program.
+Build a professional website for Alberto Filgueiras, a sports psychologist offering consulting, mental coaching, cognitive training, and a structured brain performance program.
 
 ## Core Requirements
 - **Theme**: Black and green, modern, sporty, highly visual
-- **Sports imagery**: Soccer, track & field, beach volleyball (no American football) + user uploaded photos
+- **WhatsApp**: +610415661366 (standardized messages per context)
 - **Instagram**: @albertofilgueiras.phd
-- **WhatsApp**: +610415661366 (all booking CTAs link here with standardized message)
+- **LinkedIn**: www.linkedin.com/in/alberto-filgueiras-5565561b0
 - **Language**: Portuguese (Brazilian)
 
-## Pages
-1. **Home** - Hero "Alberto Filgueiras PhD", stats (20+ years, 75+ pubs, 500+ athletes, 4 country flags), feature cards, 4-photo carousel with credentials, CTA to WhatsApp
-2. **Sobre (About)** - "Alberto Filgueiras, PhD FHEA", bio, education (7 entries incl. Licença C AFC), 8 institutions with real logos, achievements (20 anos), YouTube videos (3), research areas (Transculturais)
-3. **Serviços (Services)** - 3 service types, benefits, FAQ, WhatsApp CTA
-4. **Programa Fortaleza Emocional** - NEW: 16-session program, science-backed, young soccer images, package pricing, WhatsApp CTA with specific message
-5. **Contato (Contact)** - Contact form, WhatsApp CTA, phone, Instagram (no email)
-6. **Login** - Dark themed login form (mocked)
+## Pages (Current)
+1. **Home** — Single-page with ALL content: Hero ("Alberto Filgueiras / PhD em Neurociência Cognitiva"), 10% discount popup for Cérebro em Alta Performance, stats, bio, auto-scrolling logo carousel (14 institutions), feature cards ("Inteligência Emocional"), education, photo carousel (5 images), credentials, achievements, YouTube videos (3), research areas, CTA
+2. **Serviços** — 3 service types with individual WhatsApp CTAs, benefits, FAQ
+3. **Programa Cérebro em Alta Performance** — 16-session program, science-backed, package pricing, WhatsApp CTA
+4. **Contato** — Contact form, WhatsApp, phone, Instagram, LinkedIn (no email, no location)
+5. **Login** — Dark themed login form (mocked)
 
 ## Architecture
 - Frontend: React + Tailwind CSS + Shadcn UI
 - Backend: FastAPI + MongoDB (not yet implemented)
 - Data: All mocked in mock.js
 
-## What's Been Implemented
+## Implemented (Feb 2026)
 
-### Session 1 (Feb 2026)
-- [x] Full frontend prototype with all pages
-- [x] Black/green sporty theme across ALL pages
-- [x] Photo carousel, YouTube embeds, institution badges
-- [x] WhatsApp linking, email removed, 20 years update
-- [x] Testing: 22/22 passed (iteration 1)
+### Session 1
+- [x] Full frontend prototype, black/green theme, routing
+- [x] Testing: 22/22 passed
 
-### Session 2 (Feb 2026)
-- [x] Standardized WhatsApp message on ALL links across all pages
-- [x] Removed vertical photo from carousel (now 4 images)
-- [x] Updated Brazil team caption to "Seleção Brasileira de Voleibol de Praia"
-- [x] About title: "Alberto Filgueiras, PhD FHEA"
-- [x] Education: Added "Licença C de Treinador de Futebol: Football Australia/AFC"
-- [x] Real logos for all 8 institutions (uploaded + external URLs)
-- [x] "Cross-Culturais" → "Transculturais"
-- [x] Renamed "Consultoria" tab to "Serviços" (route: /servicos)
-- [x] NEW: "Programa Fortaleza Emocional" page with 16 modules, science content, young soccer images
-- [x] Testing: 16/16 passed (iteration 2)
+### Session 2
+- [x] Standardized WhatsApp messages, real institution logos, renamed tabs
+- [x] New page: Programa Fortaleza Emocional
+- [x] Testing: 16/16 passed
+
+### Session 3
+- [x] Hero: "PhD em Neurociência Cognitiva" + specialist text
+- [x] 10% discount popup for Programa Cérebro em Alta Performance
+- [x] Merged ALL About content into Home, deleted About page/route
+- [x] Auto-scrolling logo carousel (14 institutions)
+- [x] Education before Trajetória Profissional, removed duplicate Pós-Doc
+- [x] Renamed "Fortaleza Emocional" → "Cérebro em Alta Performance" everywhere
+- [x] Services: individual WhatsApp per service type
+- [x] Contact: LinkedIn replaces location
+- [x] New photos added to carousel, Dunbar photo replaced
+- [x] Testing: 20/20 passed
 
 ## P1 - Upcoming
-- Backend implementation (FastAPI + MongoDB)
-- Contact form API endpoint
-- Authentication (Login/Register)
+- Backend implementation (FastAPI + MongoDB for contact form, auth)
+- Connect frontend to real API endpoints
 
 ## P2 - Future
-- Full authentication flow with JWT
+- Full JWT authentication flow
 - Admin dashboard
 - SEO optimization
