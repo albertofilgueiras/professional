@@ -1,58 +1,55 @@
 # Alberto Filgueiras PhD - Professional Website
 
 ## Problem Statement
-Build a professional website for Alberto Filgueiras, a sports psychologist offering consulting, mental coaching, cognitive training, and online services.
-
-## User Personas
-- Potential clients (athletes, clubs, parents of athletes)
-- Sports professionals looking for consulting
-- Academic/research community
+Build a professional website for Alberto Filgueiras, a sports psychologist offering consulting, mental coaching, cognitive training, and a structured emotional fortitude program.
 
 ## Core Requirements
 - **Theme**: Black and green, modern, sporty, highly visual
-- **Sports imagery**: Soccer, track & field, beach volleyball (no American football)
+- **Sports imagery**: Soccer, track & field, beach volleyball (no American football) + user uploaded photos
 - **Instagram**: @albertofilgueiras.phd
-- **WhatsApp**: +610415661366 (all booking CTAs link here)
+- **WhatsApp**: +610415661366 (all booking CTAs link here with standardized message)
 - **Language**: Portuguese (Brazilian)
 
 ## Pages
-1. **Home** - Hero with "Alberto Filgueiras PhD", stats (20+ years, 75+ publications, 500+ athletes, 4 country flags), feature cards (Controle Mental, Foco Total, Equilíbrio, Crescimento), photo carousel with credentials, CTA to WhatsApp
-2. **Sobre (About)** - Bio, education (6 entries incl. 2 Pós-Doutorados), 8 professional institutions (no dates), achievements (20 anos), YouTube videos (3 embeds), research areas
-3. **Consultoria (Services)** - 3 service types, benefits, FAQ, WhatsApp CTA
-4. **Contato (Contact)** - Contact form, WhatsApp CTA, phone, Instagram, location (no email)
-5. **Login** - Dark themed login form (mocked)
+1. **Home** - Hero "Alberto Filgueiras PhD", stats (20+ years, 75+ pubs, 500+ athletes, 4 country flags), feature cards, 4-photo carousel with credentials, CTA to WhatsApp
+2. **Sobre (About)** - "Alberto Filgueiras, PhD FHEA", bio, education (7 entries incl. Licença C AFC), 8 institutions with real logos, achievements (20 anos), YouTube videos (3), research areas (Transculturais)
+3. **Serviços (Services)** - 3 service types, benefits, FAQ, WhatsApp CTA
+4. **Programa Fortaleza Emocional** - NEW: 16-session program, science-backed, young soccer images, package pricing, WhatsApp CTA with specific message
+5. **Contato (Contact)** - Contact form, WhatsApp CTA, phone, Instagram (no email)
+6. **Login** - Dark themed login form (mocked)
 
 ## Architecture
 - Frontend: React + Tailwind CSS + Shadcn UI
 - Backend: FastAPI + MongoDB (not yet implemented)
 - Data: All mocked in mock.js
 
-## What's Been Implemented (Feb 2026)
-- [x] Full frontend prototype with all 5 pages
-- [x] Black/green sporty theme across ALL pages
-- [x] Photo carousel with 5 real uploaded images of Alberto
-- [x] YouTube video embeds (3 videos) on About page
-- [x] Institution badges (8 professional experiences)
-- [x] Country flags (BR, CA, UK, AU) instead of number
-- [x] All course-related content REMOVED
-- [x] WhatsApp linking on all CTAs
-- [x] Email removed from contact/footer
-- [x] 20 years experience (updated from 15)
-- [x] Responsive navigation (Home, Sobre, Consultoria, Contato, Login)
-- [x] Testing: 100% pass rate (22/22 tests)
+## What's Been Implemented
 
-## P0 - Completed
-- Theme overhaul (black/green) on all pages
-- Content updates per user specifications
+### Session 1 (Feb 2026)
+- [x] Full frontend prototype with all pages
+- [x] Black/green sporty theme across ALL pages
+- [x] Photo carousel, YouTube embeds, institution badges
+- [x] WhatsApp linking, email removed, 20 years update
+- [x] Testing: 22/22 passed (iteration 1)
+
+### Session 2 (Feb 2026)
+- [x] Standardized WhatsApp message on ALL links across all pages
+- [x] Removed vertical photo from carousel (now 4 images)
+- [x] Updated Brazil team caption to "Seleção Brasileira de Voleibol de Praia"
+- [x] About title: "Alberto Filgueiras, PhD FHEA"
+- [x] Education: Added "Licença C de Treinador de Futebol: Football Australia/AFC"
+- [x] Real logos for all 8 institutions (uploaded + external URLs)
+- [x] "Cross-Culturais" → "Transculturais"
+- [x] Renamed "Consultoria" tab to "Serviços" (route: /servicos)
+- [x] NEW: "Programa Fortaleza Emocional" page with 16 modules, science content, young soccer images
+- [x] Testing: 16/16 passed (iteration 2)
 
 ## P1 - Upcoming
 - Backend implementation (FastAPI + MongoDB)
-  - Contact form API endpoint
-  - Authentication (Login/Register)
-- API contracts definition
+- Contact form API endpoint
+- Authentication (Login/Register)
 
 ## P2 - Future
 - Full authentication flow with JWT
-- Admin dashboard for managing contacts
-- Course platform (if reintroduced)
+- Admin dashboard
 - SEO optimization
