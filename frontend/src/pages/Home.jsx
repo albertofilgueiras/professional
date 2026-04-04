@@ -104,18 +104,18 @@ const Home = () => {
     <div className="min-h-screen bg-black">
       {/* Floating Popup - no blur */}
       {showPopup && (
-        <div className="fixed bottom-6 right-6 z-[100]" data-testid="discount-popup">
-          <div className="relative bg-gradient-to-br from-gray-900 to-black border border-green-500/50 rounded-2xl p-6 max-w-sm shadow-2xl shadow-green-900/30">
+        <div className="fixed top-24 right-6 z-[100]" data-testid="discount-popup">
+          <div className="relative bg-gradient-to-br from-gray-900 to-black border border-green-500/50 rounded-2xl p-8 max-w-md shadow-2xl shadow-green-900/30">
             <button onClick={closePopup} className="absolute top-3 right-3 text-gray-400 hover:text-white transition-colors" data-testid="popup-close-btn">
               <X className="w-5 h-5" />
             </button>
             <div className="text-center">
-              <div className="bg-green-600 text-white text-2xl font-black py-2 px-4 rounded-xl mb-3 inline-block">10% OFF</div>
-              <p className="text-white font-semibold mb-1">Programa Cérebro em Alta Performance</p>
-              <p className="text-gray-400 text-sm mb-4">Aproveite pelos próximos 30 dias!</p>
+              <div className="bg-green-600 text-white text-3xl font-black py-3 px-6 rounded-xl mb-4 inline-block">10% OFF</div>
+              <p className="text-white font-semibold text-lg mb-1">Programa Cérebro em Alta Performance</p>
+              <p className="text-gray-400 text-sm mb-5">Aproveite pelos próximos 30 dias!</p>
               <a href={"https://wa.me/610415661366?text=" + encodeURIComponent("Olá, gostaria de mais informações sobre o Programa Cérebro em Alta Performance.")} target="_blank" rel="noopener noreferrer">
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold" data-testid="popup-cta-btn">
-                  <Zap className="w-4 h-4 mr-2" />Quero Aproveitar
+                <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-base py-3" data-testid="popup-cta-btn">
+                  <Zap className="w-5 h-5 mr-2" />Quero Aproveitar
                 </Button>
               </a>
             </div>

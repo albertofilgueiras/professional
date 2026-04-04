@@ -11,7 +11,7 @@ const Header = () => {
   const menuItems = [
     { path: '/', label: 'Home' },
     { path: '/servicos', label: 'Serviços' },
-    { path: '/programa-cerebro-alta-performance', label: 'Cérebro em Alta Performance' },
+    { path: '/programa-cerebro-alta-performance', label: 'Programa Cérebro em Alta Performance' },
     { path: '/livros', label: 'Livros' },
     { path: '/curso-psicologia-processos-basicos', label: 'Aulas Gravadas' },
     { path: '/contato', label: 'Contato' }

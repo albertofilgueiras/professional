@@ -18,7 +18,7 @@ const Footer = () => {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li><Link to="/" className="hover:text-green-500 transition-colors">Home</Link></li>
               <li><Link to="/servicos" className="hover:text-green-500 transition-colors">Serviços</Link></li>
-              <li><Link to="/programa-cerebro-alta-performance" className="hover:text-green-500 transition-colors">Cérebro em Alta Performance</Link></li>
+              <li><Link to="/programa-cerebro-alta-performance" className="hover:text-green-500 transition-colors">Programa Cérebro em Alta Performance</Link></li>
               <li><Link to="/livros" className="hover:text-green-500 transition-colors">Livros</Link></li>
               <li><Link to="/curso-psicologia-processos-basicos" className="hover:text-green-500 transition-colors">Aulas Gravadas</Link></li>
               <li><Link to="/contato" className="hover:text-green-500 transition-colors">Contato</Link></li>
