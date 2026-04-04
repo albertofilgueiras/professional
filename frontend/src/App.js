@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import FortalezaEmocional from "./pages/FortalezaEmocional";
 import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import { Toaster } from "./components/ui/sonner";
@@ -18,7 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<About />} />
-          <Route path="/consultoria" element={<Services />} />
+          <Route path="/servicos" element={<Services />} />
+          <Route path="/programa-fortaleza-emocional" element={<FortalezaEmocional />} />
           <Route path="/login" element={<Login />} />
           <Route path="/contato" element={<Contact />} />
         </Routes>

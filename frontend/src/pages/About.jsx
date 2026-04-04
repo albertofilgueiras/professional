@@ -7,19 +7,20 @@ const education = [
   { degree: 'Pós-Doutorado em Ciências do Esporte e Reabilitação', institution: 'Universidade de Camberra, Austrália' },
   { degree: 'Pós-Doutorado em Educação Física', institution: 'Universidade Católica de Brasília' },
   { degree: 'Pós-Doutorado em Ciências do Esporte', institution: 'Universidade Católica de Brasília' },
+  { degree: 'Licença C de Treinador de Futebol', institution: 'Football Australia / Asian Football Confederation' },
   { degree: 'Mestrado em Psicologia', institution: 'Pontifícia Universidade Católica do Rio de Janeiro' },
   { degree: 'Bacharelado em Psicologia', institution: 'Universidade Federal do Rio de Janeiro' }
 ];
 
 const institutions = [
-  { name: 'Comitê Olímpico Brasileiro', abbrev: 'COB', color: 'bg-yellow-500' },
-  { name: 'Clube de Regatas do Flamengo', abbrev: 'CRF', color: 'bg-red-700' },
-  { name: 'Team Nogueira', abbrev: 'TN', color: 'bg-red-600' },
-  { name: 'Federação de Karatê do Estado do RJ', abbrev: 'FKERJ', color: 'bg-blue-600' },
-  { name: 'Clube de Futebol do Zico', abbrev: 'CFZ', color: 'bg-blue-700' },
-  { name: 'Team Octógono', abbrev: 'TO', color: 'bg-purple-600' },
-  { name: 'Cairns Taipans', abbrev: 'CT', color: 'bg-orange-600' },
-  { name: 'Dunbar Rovers FC', abbrev: 'DR', color: 'bg-teal-600' }
+  { name: 'Comitê Olímpico Brasileiro', logo: 'https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/bdp32jau_image.png' },
+  { name: 'Clube de Regatas do Flamengo', logo: 'https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/r8pkqqrb_image.png' },
+  { name: 'Team Nogueira', logo: 'https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/rhiwo5gh_image.png' },
+  { name: 'Federação de Karatê do Estado do RJ', logo: 'https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/ffszwvc7_image.png' },
+  { name: 'Clube de Futebol do Zico', logo: 'https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/vbkci487_image.png' },
+  { name: 'Team Octógono', logo: 'https://images.tapology.com/gyms/logos/10770/profile/10770-academia-octogono.jpg?1764027205' },
+  { name: 'Cairns Taipans', logo: 'https://upload.wikimedia.org/wikipedia/en/f/f9/Cairns_Taipans_logo.svg' },
+  { name: 'Dunbar Rovers FC', logo: 'https://dunbarroversfc.com/wp-content/uploads/2018/02/logo-home-final-small.png' }
 ];
 
 const achievements = [
@@ -49,8 +50,8 @@ const About = () => {
                 <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Sobre</span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6" data-testid="about-title">
-                Prof. Dr. Alberto
-                <span className="text-green-500"> Filgueiras</span>
+                Alberto Filgueiras,
+                <span className="text-green-500"> PhD FHEA</span>
               </h1>
               <p className="text-lg text-gray-300 mb-4">
                 Psicólogo Esportivo, Pesquisador e Professor Universitário
@@ -78,7 +79,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-white mb-6">Quem Sou Eu</h2>
             <div className="space-y-4 text-gray-300 text-base leading-relaxed">
               <p>
-                Sou Prof. Dr. Alberto Filgueiras, psicólogo, pesquisador e professor universitário com mais de 20 anos de experiência na área da Psicologia do Esporte, do Exercício e Psicoterapia. Minha formação acadêmica é sólida e contínua, o que me faz trabalhar sempre com técnicas fundamentadas em evidências científicas.
+                Sou Alberto Filgueiras, PhD FHEA, psicólogo, pesquisador e professor universitário com mais de 20 anos de experiência na área da Psicologia do Esporte, do Exercício e Psicoterapia. Minha formação acadêmica é sólida e contínua, o que me faz trabalhar sempre com técnicas fundamentadas em evidências científicas.
               </p>
               <p>
                 Como professor, atuei em grandes universidades do Brasil (PUC-RJ, UERJ e Universidade Católica de Brasília), da Austrália (University of Canberra e atualmente CQUniversity), e do Reino Unido (University of Gloucestershire). Como psicólogo do esporte e psicoterapeuta, tenho passagens pelo Clube de Regatas do Flamengo, pelo Comitê Olímpico Brasileiro, pela Federação de Karatê do Estado do Rio de Janeiro, pela Team Nogueira, além de atendimentos individuais em diversos esportes como futebol, basquete, vôlei, vôlei de praia, MMA, karatê, rúgbi, atletismo e tênis.
@@ -108,7 +109,7 @@ const About = () => {
             </div>
           </div>
 
-          {/* Experience - Institutions */}
+          {/* Experience - Institutions with logos */}
           <div className="mb-16">
             <div className="flex items-center mb-8">
               <Briefcase className="w-8 h-8 text-green-500 mr-3" />
@@ -117,8 +118,12 @@ const About = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {institutions.map((inst, index) => (
                 <Card key={index} className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-6 hover:border-green-500/50 transition-all text-center group" data-testid={`institution-card-${index}`}>
-                  <div className={`${inst.color} w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-lg`}>
-                    <span className="text-white font-bold text-xs">{inst.abbrev}</span>
+                  <div className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform overflow-hidden bg-white/10">
+                    <img
+                      src={inst.logo}
+                      alt={inst.name}
+                      className="w-14 h-14 object-contain"
+                    />
                   </div>
                   <h3 className="text-sm font-semibold text-white leading-tight">{inst.name}</h3>
                 </Card>
@@ -189,7 +194,7 @@ const About = () => {
                 </p>
               </Card>
               <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-6 text-center hover:border-green-500/50 transition-all">
-                <h3 className="text-lg font-bold text-white mb-3">Testes Psicológicos Cross-Culturais</h3>
+                <h3 className="text-lg font-bold text-white mb-3">Testes Psicológicos Transculturais</h3>
                 <p className="text-gray-400 text-sm">
                   Validação e adaptação de instrumentos psicológicos em diferentes culturas
                 </p>

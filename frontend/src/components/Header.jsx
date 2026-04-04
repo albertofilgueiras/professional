@@ -12,7 +12,8 @@ const Header = () => {
   const menuItems = [
     { path: '/', label: 'Home' },
     { path: '/sobre', label: 'Sobre' },
-    { path: '/consultoria', label: 'Consultoria' },
+    { path: '/servicos', label: 'Serviços' },
+    { path: '/programa-fortaleza-emocional', label: 'Fortaleza Emocional' },
     { path: '/contato', label: 'Contato' }
   ];
 
@@ -28,12 +29,12 @@ const Header = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-gray-300 hover:text-green-500 transition-colors font-medium relative group ${
+                className={`text-gray-300 hover:text-green-500 transition-colors font-medium relative group text-sm ${
                   isActive(item.path) ? 'text-green-500' : ''
                 }`}
               >
@@ -60,8 +61,9 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-300"
+            className="lg:hidden text-gray-300"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            data-testid="mobile-menu-btn"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -69,7 +71,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3">
+          <div className="lg:hidden mt-4 pb-4 space-y-3">
             {menuItems.map((item) => (
               <Link
                 key={item.path}

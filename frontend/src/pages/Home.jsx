@@ -4,6 +4,8 @@ import { Button } from '../components/ui/button';
 import { Card } from '../components/ui/card';
 import { Brain, Target, Zap, TrendingUp, Heart, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 
+const whatsappLink = "https://wa.me/610415661366?text=" + encodeURIComponent("Olá, gostaria de mais informações de como marcar o meu primeiro atendimento.");
+
 const carouselImages = [
   {
     src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/b1ny74e0_Filgueiras_Flamengo.png",
@@ -11,7 +13,7 @@ const carouselImages = [
   },
   {
     src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/7lm63nux_image.png",
-    alt: "Alberto Filgueiras com a Seleção Brasileira"
+    alt: "Alberto Filgueiras com a Seleção Brasileira de Voleibol de Praia"
   },
   {
     src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/hph9r6id_Dunbar.jpg",
@@ -20,10 +22,6 @@ const carouselImages = [
   {
     src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/rgiuzvqm_image.png",
     alt: "Alberto Filgueiras palestrando para o Cairns Taipans"
-  },
-  {
-    src: "https://customer-assets.emergentagent.com/job_ea3873ad-330f-4405-b3bb-e85623059aa2/artifacts/moxqq8nh_image.png",
-    alt: "Alberto Filgueiras em competição internacional"
   }
 ];
 
@@ -69,15 +67,15 @@ const Home = () => {
               Preparação Mental para o alto rendimento com equilíbrio e bem-estar
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <a href="https://wa.me/610415661366" target="_blank" rel="noopener noreferrer">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white text-lg px-10 py-7 rounded-xl font-bold shadow-lg shadow-green-900/50 hover:shadow-green-900/70 transition-all sport-glow" data-testid="hero-whatsapp-btn">
                   <Zap className="w-6 h-6 mr-2" />
                   Agendar Consulta
                 </Button>
               </a>
-              <Link to="/consultoria">
+              <Link to="/servicos">
                 <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-xl border-2 border-green-500 text-green-400 hover:bg-green-500/10 font-bold" data-testid="hero-services-btn">
-                  Consultoria
+                  Serviços
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
@@ -198,7 +196,6 @@ const Home = () => {
             </h2>
           </div>
 
-          {/* Carousel */}
           <div className="max-w-4xl mx-auto mb-12">
             <div className="relative rounded-2xl overflow-hidden aspect-video bg-gray-900" data-testid="experience-carousel">
               {carouselImages.map((img, idx) => (
@@ -207,11 +204,7 @@ const Home = () => {
                   className="absolute inset-0 transition-opacity duration-700"
                   style={{ opacity: currentSlide === idx ? 1 : 0 }}
                 >
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-full object-cover"
-                  />
+                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                     <p className="text-white text-lg font-medium">{img.alt}</p>
                   </div>
@@ -231,14 +224,12 @@ const Home = () => {
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
                     className={`h-3 rounded-full transition-all ${currentSlide === idx ? 'bg-green-500 w-8' : 'bg-white/50 w-3'}`}
-                    data-testid={`carousel-dot-${idx}`}
                   />
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Credentials Text */}
           <div className="max-w-4xl mx-auto text-center">
             <Card className="bg-gradient-to-br from-gray-900 to-black border-green-900/30 p-8" data-testid="credentials-card">
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
@@ -264,24 +255,18 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-32 bg-gradient-to-br from-green-600 to-green-800 relative overflow-hidden">
         <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1"
-            alt="Beach volleyball"
-            className="w-full h-full object-cover opacity-20"
-          />
+          <img src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1" alt="Beach volleyball" className="w-full h-full object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-green-700/90" />
         </div>
-        
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
-            PRONTO PARA
-            <br />
+            PRONTO PARA<br />
             <span className="text-black">DOMINAR SUA MENTE?</span>
           </h2>
           <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto">
             Agende sua primeira sessão e transforme sua performance através da psicologia do esporte
           </p>
-          <a href="https://wa.me/610415661366" target="_blank" rel="noopener noreferrer">
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-black hover:bg-gray-900 text-white text-xl px-12 py-8 rounded-2xl font-bold shadow-2xl hover:shadow-black/50 transition-all" data-testid="cta-whatsapp-btn">
               <Zap className="w-6 h-6 mr-3" />
               Agendar Consulta Agora

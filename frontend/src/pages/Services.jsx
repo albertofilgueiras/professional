@@ -4,6 +4,8 @@ import { Button } from '../components/ui/button';
 import { services } from '../mock';
 import { CheckCircle, Video, Users, Presentation, Zap } from 'lucide-react';
 
+const whatsappLink = "https://wa.me/610415661366?text=" + encodeURIComponent("Olá, gostaria de mais informações de como marcar o meu primeiro atendimento.");
+
 const serviceIcons = [Video, Users, Presentation];
 
 const Services = () => {
@@ -22,7 +24,7 @@ const Services = () => {
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="inline-block mb-6 px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-full">
-            <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Consultoria</span>
+            <span className="text-green-400 font-semibold text-sm uppercase tracking-wider">Serviços</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6" data-testid="services-title">
             Serviços de
@@ -128,7 +130,7 @@ const Services = () => {
           <p className="text-lg mb-8 text-white/90 max-w-2xl mx-auto">
             Entre em contato pelo WhatsApp e agende seu primeiro atendimento
           </p>
-          <a href="https://wa.me/610415661366" target="_blank" rel="noopener noreferrer">
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="bg-black hover:bg-gray-900 text-white text-lg px-10 py-7 rounded-xl font-bold" data-testid="services-cta-btn">
               <Zap className="w-5 h-5 mr-2" />
               Agendar pelo WhatsApp

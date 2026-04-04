@@ -33,8 +33,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/consultoria" className="hover:text-green-500 transition-colors">
-                  Consultoria
+                <Link to="/servicos" className="hover:text-green-500 transition-colors">
+                  Serviços
+                </Link>
+              </li>
+              <li>
+                <Link to="/programa-fortaleza-emocional" className="hover:text-green-500 transition-colors">
+                  Fortaleza Emocional
                 </Link>
               </li>
               <li>
@@ -51,7 +56,7 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-400">
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-green-500" />
-                <a href="https://wa.me/610415661366" className="hover:text-green-500 transition-colors">
+                <a href={"https://wa.me/610415661366?text=" + encodeURIComponent("Olá, gostaria de mais informações de como marcar o meu primeiro atendimento.")} className="hover:text-green-500 transition-colors">
                   +61 0415 661 366
                 </a>
               </li>

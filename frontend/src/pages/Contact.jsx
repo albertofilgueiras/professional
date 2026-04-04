@@ -32,7 +32,7 @@ const Contact = () => {
     setFormData({ name: '', email: '', phone: '', message: '' });
   };
 
-  const whatsappLink = `https://wa.me/610415661366?text=Olá!%20Gostaria%20de%20saber%20mais%20informações%20sobre%20como%20marcar%20o%20meu%20primeiro%20atendimento.`;
+  const whatsappLink = "https://wa.me/610415661366?text=" + encodeURIComponent("Olá, gostaria de mais informações de como marcar o meu primeiro atendimento.");
 
   return (
     <div className="min-h-screen bg-black">
